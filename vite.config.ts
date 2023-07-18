@@ -1,8 +1,7 @@
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -12,5 +11,8 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/setupTests.ts',
+  },
+  server: {
+    host: '127.0.0.1'
   }
 })
